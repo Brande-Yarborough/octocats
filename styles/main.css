@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Helvetica, arial, sans-serif;/*use 3 to ensure accessibility in all browsers*/
+
+}
+
+
+
 
 /*.octodex {
     width: 20%;
@@ -28,12 +35,14 @@
 }*/
 
 
-.octodex {
+/*.octodex {
 display: flex;
-}
+}*/
 
 ul {
     display: inline-block;
+    padding: 0; /* gets rid of 40 padding already in*/
+    text-align: center;
 }
 
 ul > li {
@@ -51,14 +60,28 @@ img {
 
 .octocat {
     display: inline-block;
-    width: 50%;
-    height: 50%;
-    border: solid 2px lightgrey;
+    width: 30%;
+    height: 30%;
 }
 
 .octocat > a {
+    border: solid 2px lightgrey;
     display:inline-block;
-    position: relative;
+    height: 100%;
+    border-radius: 3px; /*soften up border*/
+    position: relative; /*position for pseudo element child*/
+}
+
+.octocat > a::after { /*creates grey arrow pseudo element at bottom*/
+    content: "";
+    height: 0;
+    width: 0;
+    border-top: solid 10px lightgrey; /*target top because we want to point down*/
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+    position: absolute; /*will be positioned in relation to parent element*/
+    top: 100%;
+    right: 1%;
 }
 
 /*.octocat ~ a {
@@ -78,14 +101,20 @@ a {
 }*/
  
 .image-footer {
-    padding-top: 2px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     height: 30px;
     border-bottom: solid 2px lightgrey;
+    position:relative; /*create position context for all children*/
 }
 
 .image-number {
-float: left;
-color: lightgrey;
+    position: absolute;
+    top: 50%; /*lines top of child up at 50% line*/
+    transform: translateY(-50%); /*translate on Y axis 50% of its height, - moves up*/
+    left: 0;
+    /*float: left;*/
+    color: lightgrey;
 }
 
 .image-number::before {
@@ -102,7 +131,14 @@ text-align: right;
 
 .image-caption a {
     color: black;
+    text-decoration: none;
 }
+
+/*.image-caption a:nth-child(2) {
+    text-decoration: none;
+    color: black;
+
+}*/
 
 .authors {
     /*float: right;*/
@@ -110,9 +146,15 @@ text-align: right;
     padding-left: 5px;
 }
 
+.authors > a {
+    display: inline-block;
+    width: 30px;
+}
+
 .authors img {
     max-width: 15%;
-
+    vertical-align: middle; /*only work on inline element*/
+    border-radius: 5px;
 
 }
 

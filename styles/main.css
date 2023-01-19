@@ -7,52 +7,20 @@ body {
 
 }
 
-
-
-
-/*.octodex {
-    width: 20%;
-    height: 200px;
-    display: inline-block;
-    }
-
-    .octocats {
-        position: relative;
-        top: 20px;
-        right: 20px;
-    }*/
-
-
-
- /*.octodex {
-    display: flex;
-    width: 100%;
-    }
-
- .octodex > li {
-    position: relative;
-    
-}*/
-
-
-/*.octodex {
-display: flex;
-}*/
-
 ul {
     display: inline-block;
     padding: 0; /* gets rid of 40 padding already in*/
     text-align: center;
 }
 
-ul > li {
-  display: inline-block;
-  width: 200px;
+ ul > li {
+  display: inline-block; /*removed bullets from li*/
+  /* width: 200px;
   height: 200px;
-  margin: 1em;
-  /*border: solid 2px grey;*/
+  margin: 1em; 
+  border: solid 2px grey;*/
 
-}
+} 
 
 img {
     width: 100%;
@@ -61,7 +29,7 @@ img {
 .octocat {
     display: inline-block;
     width: 30%;
-    height: 30%;
+    height: 100%;
 }
 
 .octocat > a {
@@ -84,32 +52,16 @@ img {
     right: 1%;
 }
 
-/*.octocat ~ a {
-    position: relative;
-}
-
-.octodex li {
-    display: inline-block;
-    width: 200px;
-    height: 100px;
-    margin: 1em;
-    border: solid 2px grey;
-}
-
-a {
-    position: relative;
-}*/
  
 .image-footer {
     padding-top: 15px;
     padding-bottom: 15px;
-    height: 30px;
     border-bottom: solid 2px lightgrey;
     position:relative; /*create position context for all children*/
 }
 
 .image-number {
-    position: absolute;
+    position: absolute; /*conforms to parent*/
     top: 50%; /*lines top of child up at 50% line*/
     transform: translateY(-50%); /*translate on Y axis 50% of its height, - moves up*/
     left: 0;
@@ -143,17 +95,17 @@ text-align: right;
 .authors {
     /*float: right;*/
     display: inline-block;
-    padding-left: 5px;
+
 }
 
-.authors > a {
+.authors > li > a {
     display: inline-block;
     width: 30px;
 }
 
 .authors img {
-    max-width: 15%;
-    vertical-align: middle; /*only work on inline element*/
+    
+    vertical-align: middle; /*only works on inline element*/
     border-radius: 5px;
 
 }

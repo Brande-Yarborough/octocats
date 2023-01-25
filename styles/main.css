@@ -1,89 +1,89 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Helvetica, arial, sans-serif;/*use 3 to ensure accessibility in all browsers*/
-
+  font-family: Helvetica, arial, sans-serif; /*use 3 to ensure accessibility in all browsers*/
 }
 
 ul {
-    display: inline-block;
-    padding: 0; /* gets rid of 40 padding already in*/
-    text-align: center;
+  display: inline-block;
+  padding: 0; /* gets rid of 40 padding already in*/
+  text-align: center;
 }
 
- ul > li {
+ul > li {
   display: inline-block; /*removed bullets from li*/
   /* width: 200px;
   height: 200px;
   margin: 1em; 
   border: solid 2px grey;*/
-
-} 
+}
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 .octocat {
-    display: inline-block;
-    width: 30%;
-    height: 100%;
+  display: inline-block;
+  width: 30%;
+  height: 100%;
 }
 
 .octocat > a {
-    border: solid 2px lightgrey;
-    display:inline-block;
-    height: 100%;
-    border-radius: 3px; /*soften up border*/
-    position: relative; /*position for pseudo element child*/
+  border: solid 2px lightgrey;
+  display: inline-block;
+  height: 100%;
+  border-radius: 3px; /*soften up border*/
+  position: relative; /*position for pseudo element child*/
 }
 
-.octocat > a::after { /*creates grey arrow pseudo element at bottom*/
-    content: "";
-    height: 0;
-    width: 0;
-    border-top: solid 10px lightgrey; /*target top because we want to point down*/
-    border-left: solid 10px transparent;
-    border-right: solid 10px transparent;
-    position: absolute; /*will be positioned in relation to parent element*/
-    top: 100%;
-    right: 1%;
+.octocat > a::after {
+  /*creates grey arrow pseudo element at bottom*/
+  content: "";
+  height: 0;
+  width: 0;
+  border-top: solid 10px lightgrey; /*target top because we want to point down*/
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  position: absolute; /*will be positioned in relation to parent element*/
+  top: 100%;
+  right: 1%;
 }
 
- 
 .image-footer {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-bottom: solid 2px lightgrey;
-    position:relative; /*create position context for all children*/
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: solid 2px lightgrey;
+  position: relative; /*create position context for all children*/
 }
 
 .image-number {
-    position: absolute; /*conforms to parent*/
-    top: 50%; /*lines top of child up at 50% line*/
-    transform: translateY(-50%); /*translate on Y axis 50% of its height, - moves up*/
-    left: 0;
-    /*float: left;*/
-    color: lightgrey;
+  position: absolute; /*conforms to parent*/
+  top: 50%; /*lines top of child up at 50% line*/
+  transform: translateY(
+    -50%
+  ); /*translate on Y axis 50% of its height, - moves up*/
+  left: 0;
+  /*float: left;*/
+  color: lightgrey;
 }
 
 .image-number::before {
-    content: "#";
+  content: "#";
 }
 
 .image-caption {
-text-align: right;
+  text-align: right;
 }
 
 .image-caption span {
-    color: grey;
+  color: grey;
 }
 
 .image-caption a {
-    color: black;
-    text-decoration: none;
+  color: black;
+  text-decoration: none;
 }
 
 /*.image-caption a:nth-child(2) {
@@ -93,20 +93,16 @@ text-align: right;
 }*/
 
 .authors {
-    /*float: right;*/
-    display: inline-block;
-
+  /*float: right;*/
+  display: inline-block;
 }
 
 .authors > li > a {
-    display: inline-block;
-    width: 30px;
+  display: inline-block;
+  width: 30px;
 }
 
 .authors img {
-    
-    vertical-align: middle; /*only works on inline element*/
-    border-radius: 5px;
-
+  vertical-align: middle; /*only works on inline element*/
+  border-radius: 5px;
 }
-
